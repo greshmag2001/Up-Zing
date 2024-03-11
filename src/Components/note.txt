@@ -1,0 +1,57 @@
+"https://www.youtube.com/embed/suAR1PYFNYA?autoplay=1?" 
+https://www.youtube.com/watch?v=suAR1PYFNYA
+
+api call(to connect backend to frontend)
+--------
+
+-library- axios
+-npm i axios
+
+
+async await
+-----------
+->without async await
+asyncFunction=()=>{
+    asyncCode().then(data=>{
+        console.log(data)
+    })
+}
+
+->with async await
+asyncFunction=async()=>{
+    const data=await asyncCode()
+    console.log(data)
+}
+
+data sharing in sibling components
+----------------------------------
+state lifting
+-------------
+(state, function)
+parent ---- child 1 ... function
+       ---- child 2 ... state
+
+       REACT FORM
+       ----------
+
+    -Controlled component : managed by react component, set states to its value field of user inputs
+    -Uncontrolled components: managed by Real DOM
+-Set up path for REACT component
+    -can set up path in app/ Root component
+    -install react-router-dom package: npm i react-router-dom
+        -Entire react app should be render in BrowseRouter selector
+        -place all component that need path in routes selector
+        -set up path using route selector for each component
+
+1. useEffect(callback,dependency): used to provide side effects to functional component
+        -based on dependency we can provide side effects
+            -if dependency is not provided, apply side effects all the time
+            -if dependencyis empty array: apply side effect at the time of component creation.
+            -if dependency is array with state/props: apply side effect at the time of component creation
+             and as well as when valueof state/prop changes.
+
+Data sharing b/w components
+---------------------------
+    -sharing only from parent to child- use props
+     -props : property of component, its type isobject, to access props from component argument
+    -share data b/w siblings - state lifting
